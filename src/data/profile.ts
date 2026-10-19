@@ -36,6 +36,9 @@ export const profile = {
     'Building practical Android and Python projects, and looking for a six-month software development internship.',
 
   email: 'chaitanya.muley2005@gmail.com',
+  /** Display text and dialable number; set phone to null to hide the card. */
+  phone: '+91 8308431127' as string | null,
+  phoneHref: 'tel:+918308431127',
   githubUrl: 'https://github.com/chaitanya-720',
   linkedinUrl: 'https://www.linkedin.com/in/chaitanya-muley-9a1a73394' as string | null,
   /** Resume PDF in /public; null hides the resume button. */

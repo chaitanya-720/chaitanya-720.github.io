@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Github, LucideIcon } from 'lucide-react'
+import { Mail, Phone, Linkedin, Github, LucideIcon } from 'lucide-react'
 import Section from './Section'
 import { profile } from '../data/profile'
 
@@ -14,6 +14,9 @@ interface ContactItem {
 const Contact = () => {
   const items: ContactItem[] = [
     { icon: Mail, label: 'Email', value: profile.email, href: `mailto:${profile.email}`, color: 'from-blue-500 to-cyan-500', external: false },
+    ...(profile.phone
+      ? [{ icon: Phone, label: 'Phone', value: profile.phone, href: profile.phoneHref, color: 'from-green-500 to-emerald-500', external: false }]
+      : []),
     { icon: Github, label: 'GitHub', value: profile.githubUrl.replace('https://', ''), href: profile.githubUrl, color: 'from-slate-500 to-slate-700', external: true },
   ]
   if (profile.linkedinUrl) {
@@ -28,7 +31,7 @@ const Contact = () => {
       shaded
       subtitle="I'm open to internship opportunities in software and full-stack development. Feel free to reach out."
     >
-      <div className={`grid gap-8 mx-auto ${items.length === 3 ? 'md:grid-cols-3 max-w-5xl' : 'md:grid-cols-2 max-w-3xl'}`}>
+      <div className={`grid gap-6 mx-auto ${items.length >= 4 ? 'sm:grid-cols-2 lg:grid-cols-4 max-w-6xl' : items.length === 3 ? 'md:grid-cols-3 max-w-5xl' : 'md:grid-cols-2 max-w-3xl'}`}>
         {items.map((item) => (
           <a
             key={item.label}
