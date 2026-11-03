@@ -42,7 +42,7 @@ export const profile = {
   githubUrl: 'https://github.com/chaitanya-720',
   linkedinUrl: 'https://www.linkedin.com/in/chaitanya-muley-9a1a73394' as string | null,
   /** Resume PDF in /public; null hides the resume button. */
-  resumeUrl: '/Chaitanya_Muley_Resume.pdf' as string | null,
+  resumeUrl: '/Chaitanya_Muley_Resume.pdf?v=2' as string | null,
 
   about: [
     'I am a third-year Diploma Computer Engineering student at Government Polytechnic Pune with an interest in software development, Android application development, Python programming, and emerging technologies.',
